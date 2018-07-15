@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     enum TheColorState {
         white, cyan
     }
+
     final String fileName = "Todo.txt";
 
     @Override
@@ -52,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(Intent_Constants.INTENT_EDITNOTE_DATA, arrayList.get(position).toString());
                 intent.putExtra(Intent_Constants.INTENT_ITEM_POSITION, position);
                 startActivityForResult(intent, Intent_Constants.INTENT_REQUEST_CODE_TWO);
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int _position, long id) {
+                position = _position;
+                return false;
             }
         });
 
@@ -94,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 noteText = arrayList.get(position);
                 arrayList.remove(position);
                 arrayAdapter.notifyDataSetChanged();
+                saveToTextFile();
                 return true;
             default:
                 return super.onContextItemSelected(item);
