@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnSave"
+        android:background="@android:color/transparent"
+        android:gravity="top"
+        android:hint="@string/hint"
+        android:inputType=""
+        android:padding="10dp"
+        android:textSize="20sp"
+        tools:ignore="Suspicious0dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="#2980b9"
+        android:onClick="saveButtonClicked"
+        android:text="@string/save_text"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        tools:ignore="Suspicious0dp" />
+
+</RelativeLayout>

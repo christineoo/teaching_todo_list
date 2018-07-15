@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ToDoListApp</string>
+    <string name="hint">Write your notes here</string>
+    <string name="save_text">SAVE</string>
+
+
+</resources>
